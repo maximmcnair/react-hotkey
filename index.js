@@ -9,7 +9,7 @@ exports.activate = function(event) {
     if (!event) {
         event = 'keyup';
     }
-    if (!documentListener) {
+    if (typeof navigator !== 'undefined' && !documentListener) {
         documentListener = EventListener.listen(document, event, handle);
     }
     return exports;
